@@ -24,6 +24,7 @@ const parent = React.createElement
         ]
     );
 
+const p2 = React.createElement('h1', {}, "I am p2 being rendered");
 // const parent = React.createElement('div', { id: 'parent' }, [
 //   React.createElement('div', { id: 'child' }, [
 //     React.createElement('h1', {}, "I'm h1 Tag"),
@@ -35,8 +36,9 @@ const parent = React.createElement
 //   ]),
 // ]);
 
+
 console.log(parent);
-// const root = ReactDom.createRoot(document.getElementById('root'));
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(parent);
 
