@@ -1,11 +1,15 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 
+// import React from "react";
+// import ReactDOM from "react-dom";
 // document.getElementById("h1").innerHTML = "hello js";
 
 // const parent = React.createElement('div' , {id: 'parent'}, [
 //     React.createElement('div',{id: 'chidl'}, [
 //         React.cloneElement('h1' , {} , "i am h1 under child")
 //     ]),
-// ]);
+// ]);W
 
 
 const parent = React.createElement
@@ -18,8 +22,8 @@ const parent = React.createElement
                 ]),
             React.createElement('div', { id: 'child' },
                 [
-                    React.createElement('h1', {}, "I am h1 from child "),
-                    React.createElement('h2', {}, "I am h2 from child"),
+                    React.createElement('h1', {}, "I am h1 from child  after parcel"),
+                    React.createElement('h2', {}, "I am h2 from child after parcel"),
                 ]),
         ]
     );

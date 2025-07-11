@@ -1,0 +1,38 @@
+{
+  "name": "fms_react_rewind",
+  "version": "1.0.0",
+  "description": "React Food Ordering Application",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nimish3012/FMS_react_rewind.git"
+  },
+  "keywords": [
+    "FMS"
+  ],
+  "author": "Nimish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nimish3012/FMS_react_rewind/issues"
+  },
+  "homepage": "https://github.com/Nimish3012/FMS_react_rewind#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions",
+    "last 2 iOS versions",
+    "last 2 Android versions",
+    "last 2 Opera versions",
+    "last 2 Samsung Internet versions"
+  ]
+}
