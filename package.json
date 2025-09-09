@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "React Food Ordering Application",
   "scripts": {
+    "start": "rimraf dist .parcel-cache && parcel index.html --open",
+    "build": "rimraf dist && parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -19,20 +21,21 @@
   },
   "homepage": "https://github.com/Nimish3012/FMS_react_rewind#readme",
   "devDependencies": {
-    "parcel": "^2.15.4"
+    "parcel": "^2.15.4",
+    "rimraf": "^6.0.1"
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "browserslist": [
-    "last 2 Chrome versions",
-    "last 2 Firefox versions",
-    "last 2 Safari versions",
-    "last 2 Edge versions",
-    "last 2 iOS versions",
-    "last 2 Android versions",
-    "last 2 Opera versions",
-    "last 2 Samsung Internet versions"
+    "last 4 Chrome versions",
+    "last 4 Firefox versions",
+    "last 4 Safari versions",
+    "last 4 Edge versions",
+    "last 4 iOS versions",
+    "last 4 Android versions",
+    "last 4 Opera versions",
+    "last 4 Samsung Internet versions"
   ]
 }

@@ -3,45 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>React Rewind</title>
+    <link rel ="stylesheet" href="./styles.css">
 </head>
 <body>
-
-    <h1 id="h1">Hello world from HTML </h1>
+     <!-- <h4>hey on the top of root</h4> -->
     
-
-     <h4>hey on the top of root</h4>
-    <div id="root">
-      <h1>This is prior rendering</h1>
+     
+     <div id="root">
+      <h1>Not Rendered</h1>
       <!-- this will further replaced by parent element while rendering -->
     </div>
 
-    <div>
 
-      <h4>hey on below the root</h4>
-    </div>
-
-     
+    <h4>hey on below the root</h4>
     <!-- no need of cdn links as we installed react from npm ; -->
 
-    <script type="module" src="/App.js"></script>
+    <script type="module" src="./App.js"></script>
 
 </body>
 </html>
 
-<!-- 
-we learnt : 
-
-- Set up all the `tools in your laptop`
-  - `VS Code`
-  - `Chrome`
-  - `Extensions of Chrome`
-- Create a `new Git repo`
-- Build your `first Hello World` program using,
-  - Using `just HTML`
-  - Using `JS to manipulate the DOM`
-  - Using `React`
-    - `use CDN Links`
-    - `Create an Element`
-    - `Create nested React Elements`
-    - `Use root.render` -->
