@@ -1,76 +1,246 @@
-//we reset out app.js in ch 3;
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles.css";
-
-// ch 3 React element
-const heading = React.createElement("h1", { id: "heading" }, "Chapter 3"); //not an html , but a react element => obj
-//react element is an obj which when rendered to DOM => becomes html
-// react.create element => ( JS object) =>  rendered as HTML
-console.log(heading);
-
-//React using JSX
-// const jsxHeading = <h2> Heading  user 123</h2>; //not pure js
-//react element
-const jsxHeading = (
-    <h1 className="heading">
-        Jsx || react element
-    </h1>
-);  
+import {resList} from "./resList";
 
 
-//JSX = > transpiled before it reachers the JS Engine / browser
-// Parcel does this using => Babel
-//babel => transpilation (jsx into react / js engine understandable code);
+// ch 4 (planning for our fms) 1h50m
+/* 
+    header
+        logo
+        nav items
+    body
+        search
+        Restaurent container
+            restaurant Card x1 
+                -img
+                -name of restraurant
+                -Star Ratings
 
-//jsx code => converted to react.create element => ( JS object) =>  rendered as HTML
+    footer
+        copyright
+        links
+        address
+        contact
+*/
+//removed everything so far(ch 1 to 3)
 
+//ch 4 will begin with our FMS coding
 
-//functional componenet returns react element
-//functional componenet returns some peice of jsx
-//react componenet
-const Title = () => (
-    <h2> This is a title inserted in btw</h2>
-);
+//dynamic card with objList 
+const RestaurentCard = (props) => {
+// const RestaurentCard = ({resName,stars}) => { de-structuring
+    console.log(props);
+    return (
+        <div className="res-card">
+             <img className="res-logo"
+                alt="res-logo"
+                // src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/DINEOUT_ALL_RESTAURANTS/IMAGES/RESTAURANT_IMAGE_SERVICE/2025/3/5/359b15f0-991e-4825-a4ea-3f38ca564050_DSC6782b65fd78b76d5482eb4dd90249af55673.JPG"
+                src={
+                    "https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/"
+                    // "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" 
+                    +
+                    props.resData.info.cloudinaryImageId
+                }
+            />
+            <h2>{props.resData.info.name}</h2>
+            <h3>{props.resData.info.avgRating}</h3>
+            <h3>{props.resData.info.sla.deliveryTime} mins</h3>
+            <h5>{props.resData.info.cuisines.join(", ")}</h5>
+            {/* or we can destructure this on the go , so we do not have to write props.resData.info each time */}
 
-//inside a jsx , {} can be used to use js code
-//similar to js inside html
-
-const number = 10000; 
-//componenet composition
-const HeadingComponent = () => {
-    return <>
-    <h1 className="custom">
-        this is a React componenet1
-    </h1>
-
-    {/* element inside component */}
-    {jsxHeading} inserting js element
-    {/* componenet inside component */}
-    <Title/> 
-    <p> wordl</p> {number} <p>hello</p>
-    <p> wordl {number } hello</p>
-    <h2 className="custom">{100+200}</h2>
-    </>
+        </div>
+    )
 }
-//two syntax does the same things
-const HeadingComponent2 = () => (
-     <h1 className="custom">
-        this is a React componenet2 
-    </h1>
-);
-console.log(jsxHeading);
 
+
+//dynamic card
+const RestaurentCard1 = (props) => {
+// const RestaurentCard = ({resName,stars}) => { de-structuring
+
+    return (
+        <div className="res-card">
+             <img className="res-logo"
+                alt="res-logo"
+                src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/DINEOUT_ALL_RESTAURANTS/IMAGES/RESTAURANT_IMAGE_SERVICE/2025/3/5/359b15f0-991e-4825-a4ea-3f38ca564050_DSC6782b65fd78b76d5482eb4dd90249af55673.JPG"
+                
+            />
+            <h3>{props.resName}</h3>
+            <h4>{props.stars}</h4>
+            {/* <h3>{resName}</h3> //destructured
+            <h4>{stars}</h4> */}
+            <h4>Delivery ETA</h4>
+
+        </div>
+    )
+}
+
+
+//when passing resList as an comple obj
+// const RestaurentCard = (props) => {
+// // const RestaurentCard = ({resName,stars}) => { de-structuring
+//     console.log(resList);
+//     console.log(props);
+//     return (
+//         <div className="res-card">
+//              <img className="res-logo"
+//                 alt="res-logo"
+//                 src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/DINEOUT_ALL_RESTAURANTS/IMAGES/RESTAURANT_IMAGE_SERVICE/2025/3/5/359b15f0-991e-4825-a4ea-3f38ca564050_DSC6782b65fd78b76d5482eb4dd90249af55673.JPG"
+                
+//             />
+//             <h2>{resList[3].info.name}</h2>
+//             <h3>{resList[3].info.avgRating}</h3>
+//             <h3>{resList[3].info.sla.deliveryTime} mins</h3>
+//             <h5>{resList[3].info.cuisines.join(", ")}</h5>
+
+//         </div>
+//     )
+// }
+
+//for single obj render with hardcoded redobj
+const RestaurentCard3 = (props) => {
+// const RestaurentCard = ({resName,stars}) => { de-structuring
+   const resData2 = {props}
+    
+return(
+        <div className="res-card">
+
+             <img className="res-logo"
+                alt="res-logo"
+                // src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/DINEOUT_ALL_RESTAURANTS/IMAGES/RESTAURANT_IMAGE_SERVICE/2025/3/5/359b15f0-991e-4825-a4ea-3f38ca564050_DSC6782b65fd78b76d5482eb4dd90249af55673.JPG"
+                src={
+                    "https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/"
+                    // "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" 
+                    +
+                    props.resData.cloudinaryImageId
+
+                }
+            />
+            {console.log(resObj)}
+            {console.log(props)}
+            {console.log(resData2)}
+            <h4>{}</h4>
+            {/* these are the three ways to handle objects at different levels */}
+            <h4>{resObj.name}</h4>
+            <h4>{props.resData.id}</h4>
+            <h4>{resData2.props.resData.avgRating}</h4>
+
+        </div>
+    )
+}
+
+//static Card
+// const RestaurentCard = (resname) => {
+//     return (
+//         <div className="res-card">
+//             <img className="res-logo"
+//                 alt="res-logo"
+//                 src="https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/DINEOUT_ALL_RESTAURANTS/IMAGES/RESTAURANT_IMAGE_SERVICE/2025/3/5/359b15f0-991e-4825-a4ea-3f38ca564050_DSC6782b65fd78b76d5482eb4dd90249af55673.JPG"
+            
+//             />
+//             <h3>ResName</h3>
+//             <h4>star Ratings</h4>
+//             <h4>Delivery ETA</h4>
+
+//         </div>
+//     )
+// }
+const Header = () => {
+    return (
+        <div className="header">
+            
+            <div className="logo-container">
+                <img 
+                className="logo" 
+                src="https://img.freepik.com/premium-vector/restaurant-logo-with-spoon-fork-icon-modern-concept-lines_510136-228.jpg" 
+                alt="Logo" 
+                /> 
+            </div>
+
+            <div className="nav-items">
+                <ul className="items">
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+
+            </div>
+
+        </div>
+    )
+
+}
+
+
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">
+                <input 
+                className="searchbar"
+                type="text"/>
+                <button className="search-button" >Search</button>
+            </div>
+            
+            {/* static call */}
+            {/* <div className="res-container">
+                {/* all the res cards here */}
+                {/* we will have multiple cards */}
+                {/* <RestaurentCard/>
+                <RestaurentCard/>
+                <RestaurentCard/>
+            </div> */} 
+
+            {/* dynamic calls */}
+            {/* <div className="res-container">
+                {/* hard coded data */}
+                {/* <RestaurentCard1 resName = "abc" stars = "1"/> 
+                <RestaurentCard1 resName = "efg" stars = "3"/> */}
+                {/* dynamic data */}
+                {/* <RestaurentCard/> */}
+                {/* single obj from hardcoded resObj */}
+                {/* <RestaurentCard resData = {resObj}/> */}
+
+
+                {/* we can now pass objList array items as input */}
+                {/* <RestaurentCard resData ={resList[0]}/>
+                <RestaurentCard resData ={resList[1]}/>
+                <RestaurentCard resData ={resList[2]}/>
+                <RestaurentCard resData ={resList[3]}/>
+                <RestaurentCard resData ={resList[4]}/>
+                <RestaurentCard resData ={resList[5]}/>
+                <RestaurentCard resData ={resList[6]}/>
+                <RestaurentCard resData ={resList[7]}/>
+
+            </div>  */}
+
+            <div className="res-container">
+                {/* <RestaurentCard resData={resList[0.1,2,3,4..n]} /> */}
+                {
+                    resList.map(
+                        (res) => (<RestaurentCard key={res.info.id} resData = {res}/>)
+                    )
+                }
+            </div>
+
+        </div>
+
+    )
+
+}
+
+const AppLayout = () => {
+    return (
+        <div className="app">
+            <Header/>
+            <Body/>
+            {/* <Footer/> */}
+
+        </div>
+    )
+
+};
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(heading);
-// root.render(jsxHeading); last working code passing an element directly
-// root.render(HeadingComponent); if we pass the component similar to the element
-// Error: Functions are not valid as a React child. This may happen if you return HeadingComponent instead of <HeadingComponent /> from render. Or maybe you meant to call this function rather than return it.
 
-// root.render(<HeadingComponent></HeadingComponent>); correct method
-root.render(<HeadingComponent/>); //more readable
-
-//we can 
-// comp inside comp ,comp inside elem, elem inside comp, elem inside elem
-//jsx using {} inside anywhere does not blindly execute the js , it sanitises the 
-// cros side sript attacks if any malicious js found
+root.render(<AppLayout/>); 
