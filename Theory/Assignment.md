@@ -1,5 +1,24 @@
 ## Namaste React Course by Akshay Saini
 
+# Episode 05 - Let's get Hooked!
+
+## Theory:
+
+- What is the `difference` between `Named export`, `Default export`, and `* as export`?
+- What are `React Hooks`?
+- Why do we need `useState Hook`?
+
+## Code:
+
+- `Clean up` your code.
+- Create a `Folder Structure` for your app.
+- Make `different files` for each Component.
+- Create a `config file`.
+- Use all types of `import and export`.
+- Create a `Restaurant Filter button`
+- Use `useState` to create a variable and `bind` it to the `Restaurant Filter Button`.
+- Try to make your `Filter Button Work`.
+
 # Episode 04 - Talk is Cheap, show me the code
 
 ## Theory:
@@ -86,3 +105,4 @@
 - [JS Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [Babel Playground](https://babeljs.io/repl#)
 - [React without JSX](https://reactjs.org/docs/react-without-jsx.html)
+

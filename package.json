@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "React Food Ordering Application",
   "scripts": {
-    "start": "rimraf dist .parcel-cache && parcel index.html --open",
-    "build": "rimraf dist && parcel build index.html",
-    "test": "jest"
-  },
+  "start": "rimraf dist .parcel-cache && parcel index.html --open",
+  "build": "rimraf dist .parcel-cache && parcel build index.html",
+  "clean": "rimraf dist .parcel-cache",
+  "test": "jest"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Nimish3012/FMS_react_rewind.git"

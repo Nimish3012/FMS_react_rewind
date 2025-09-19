@@ -1,72 +1,8 @@
-//data of single restrau card
+//cdn link for images
+export const cdnUrl = "https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/";
 
-// export const singleresObj = {
-// 		"id": "1035581",
-// 		"name": "Big Bowl",
-// 		"cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/1/28/4e10e592-948e-4117-bb54-1dff7f816d77_1035581.jpg",
-// 		"locality": "Attapur",
-// 		"areaName": "M-Qube Mall",
-// 		"costForTwo": "₹250 for two",
-// 		"cuisines": [
-// 			"Chinese",
-// 			"Tibetan",
-// 			"Desserts"
-// 		],
-// 		"avgRating": 3.8,
-// 		"parentId": "434792",
-// 		"avgRatingString": "3.8",
-// 		"totalRatingsString": "283",
-// 		"sla": {
-// 			"deliveryTime": 59,
-// 			"lastMileTravel": 8.6,
-// 			"serviceability": "SERVICEABLE",
-// 			"slaString": "55-65 mins",
-// 			"lastMileTravelString": "8.6 km",
-// 			"iconType": "ICON_TYPE_EMPTY"
-// 		},
-// 		"availability": {
-// 			"nextCloseTime": "2025-09-12 23:00:00",
-// 			"opened": true
-// 		},
-// 		"badges": {},
-// 		"isOpen": true,
-// 		"type": "F",
-// 		"badgesV2": {
-// 			"entityBadges": {
-// 				"imageBased": {},
-// 				"textBased": {},
-// 				"textExtendedBadges": {}
-// 			}
-// 		},
-// 		"aggregatedDiscountInfoV3": {
-// 			"header": "ITEMS",
-// 			"subHeader": "AT ₹129"
-// 		},
-// 		"orderabilityCommunication": {
-// 			"title": {},
-// 			"subTitle": {},
-// 			"message": {},
-// 			"customIcon": {}
-// 		},
-// 		"differentiatedUi": {
-// 			"displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-// 			"differentiatedUiMediaDetails": {
-// 				"mediaType": "ADS_MEDIA_ENUM_IMAGE",
-// 				"lottie": {},
-// 				"video": {}
-// 			}
-// 		},
-// 		"reviewsSummary": {},
-// 		"displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-// 		"restaurantOfferPresentationInfo": {},
-// 		"externalRatings": {
-// 			"aggregatedRating": {
-// 				"rating": "--"
-// 			}
-// 		},
-// 		"ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
-// 	}
-
+export const logoUrl = "https://img.freepik.com/premium-vector/restaurant-logo-with-spoon-fork-icon-modern-concept-lines_510136-228.jpg";
+//hardcoded data for restaurant cards
 export const resList =
 [            
                   {
