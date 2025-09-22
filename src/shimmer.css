@@ -1,0 +1,104 @@
+/* Shimmer Loading Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1400px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.shimmer-card {
+  background: #f0f0f0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border: 1px solid #e5e7eb;
+  width: 330px;
+  height: 452px;
+}
+
+.shimmer-image {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.shimmer-content {
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+.shimmer-title {
+  width: 80%;
+  height: 20px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin: 0 0 0.5rem 0;
+}
+
+.shimmer-rating {
+  width: 60px;
+  height: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin: 0.25rem 0;
+}
+
+.shimmer-delivery {
+  width: 100px;
+  height: 16px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin: 0.25rem 0;
+}
+
+.shimmer-cuisines {
+  width: 90%;
+  height: 14px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+  margin: 0.5rem 0 0 0;
+}
+
+/* Responsive Design for Shimmer */
+@media (max-width: 768px) {
+  .shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .shimmer-card {
+    width: 330px;
+    margin: 1.2rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .shimmer-image {
+    height: 180px;
+  }
+}

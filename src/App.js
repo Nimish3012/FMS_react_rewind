@@ -4,6 +4,7 @@ import Header from "./components/Header";  //default import
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import "./styles.css";
+import "./shimmer.css";
 
 const AppLayout = () => {
     return (
@@ -23,27 +24,20 @@ root.render(<AppLayout/>);
 
 
 
-//ch 5 Lets Get Hooked
-//00 changing the file struture 
-//creating the src folder and moving files
+//ch 6
+//00 State, useState , changes to dom 
+// reconcilation , react fiber
 
-// 01 exporting comoponents (defaul and named)
+// 6.1 understanding of the search component
 
-//moved header to Header.js
-// moved body to Body.js
-//added a Footer.js as well
+// 6.2 Microservices:    
 
-//02 cleaned all the messy code 
-// created a constants.js file and moved every static/ hardcoded data there
-// reslist , cdnurl ,logo url and more
+// 6.3 useEffect
+    //function with 2 param (callback function, dependency arr)
+    //no dependecy => everythime render
+    //empty dependecy (only intial time render)
 
-// 03 states and local variables
-// react hook : useState
-// made our search input work as it was a controlled variable
-
-// 04 added a toggle for true false whenever the button is click
-// can be use for loggin and loggout
-
-//05 making the search btn actually work
-// used filtered list usestate(resList)
-//used filter. res with lowecase to check if it includes search input
+// 6.4 shimmer ui
+// conditional rendering
+// early return
+// filter restrau not found

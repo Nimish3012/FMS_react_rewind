@@ -302,3 +302,37 @@ const handleSearch = () => {
     );
 }
 
+
+
+
+// #chapter 6 from here :
+
+// 6.1 useEffect
+    //call with 2 param (callback function, dependency arr)
+    //no dependecy => everythime render
+    //empty dependecy (only intial time render)
+
+    // useEffect is callback and occurs just after initial render
+    //it is best suited for any api call
+    
+
+// 6.4 shimmer ui
+// conditional rendering
+// Using Ternary operator as a shorthand way or writing an if-else statement
+{isLoggedIn ? (return <UserGreeting />) : (return <GuestGreeting />)};
+// Using an if…else Statement
+{
+  (if (isLoggedIn) {
+    return <UserGreeting />;
+  }else {
+    return <GuestGreeting />;
+  })
+}
+// Using Logical && 
+{isLoggedIn && <button>Logout</button>}
+
+// early return
+// filter restrau not found
+
+//6.5 
+//js expression vs js statement
