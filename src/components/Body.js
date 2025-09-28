@@ -1,23 +1,19 @@
-import { resList } from "../constants";
+import { resList, cdnreslist } from "../constants";
 import RestaurentCard from "../cards/RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router"; //ch 7.4
 
 
 const Body = () => {
-    //03 react uses one way data binding 
-    //first parameter is a state variable , 2nd is a method to update its value, useState(default value);
-
-    //ch 06
-    //6.1
-    //useEffect
     useEffect(() => {
         getRestaurants();
     }, [])
     //6.2 asycn function for our reslist API fetch
     async function getRestaurants() {
         try {
-            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+            // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING");
+            const data = await fetch(cdnreslist);
             const json = await data.json();
             setFetchedList(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
             setFilteredList(json.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -28,12 +24,11 @@ const Body = () => {
             //set loading to false
         }
     }
-    const [fetchedList, setFetchedList] = useState(resList);
+    const [fetchedList, setFetchedList] = useState(null); //for shimmer ui
     const [searchInput, setSearchInput] = useState("");
     const [locationInput, setLocationInput] = useState("");
     const [filteredList, setFilteredList] = useState(fetchedList);
-    // 06 
-
+  
     const handleSearch = () => {
         if (searchInput === "") {
             window.alert("Enter valid text")
@@ -83,21 +78,17 @@ const Body = () => {
                             value={searchInput || ""}
                             onChange={(e) => { setSearchInput(e.target.value) }}
                         />
-
-                        {/* 04 <button className="search-button" onClick={()=>{handlebool()}} >Search - {searchBool} "{searchInput}"</button> */}
-                        {/* dom only gets updated based on a diff algo : reconciliation */}
-
                         <button className="search-button" onClick={() => { handleSearch() }} >Search</button>
                     </div>
                 </div>
 
                 <div className="res-container">
                     {/* Show shimmer while loading, otherwise show restaurant cards */}
-                    {(false) ? (
+                    {(!fetchedList) ? (
                         <Shimmer /> //lets not use shimmer for now on
                     ) : (
                         filteredList.map(
-                            (res) => (<RestaurentCard key={res.info.id} resData={res} />)
+                            (res) => (<RestaurentCard key={res.info.id} resData={res}/>)
                         )
                     )}
                 </div>

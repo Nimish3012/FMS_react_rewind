@@ -1,8 +1,14 @@
-//cdn link for images
-export const cdnUrl = "https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/";
+export const cdnResImg = "https://dineout-media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/";
 
 export const logoUrl = "https://img.freepik.com/premium-vector/restaurant-logo-with-spoon-fork-icon-modern-concept-lines_510136-228.jpg";
+
+export const cdnreslist = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
+// export const cdnreslist = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.0986834&lng=78.98413049999999&page_type=DESKTOP_WEB_LISTING";
 //hardcoded data for restaurant cards
+
+export const cdnResInfo = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=" //+id
+
+
 export const resList =
 [            
                   {
