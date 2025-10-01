@@ -388,7 +388,7 @@ const Error = () =>
 // for nested routes we need outlet
 //childer component renders at outlet
 const AppLayout = () => {
-  return (
+  return ( 
     <div className="app">
       <Header />{/* <Body/>  we need this to be dynamic */}
       <Outlet /> 
@@ -421,3 +421,63 @@ const appRouter = createBrowserRouter([
 //link each card with restaurant page
 
 // 7.10 fetching details from restaurant menu api
+
+// Ch 8 
+// 8.1 Childer of Childer Route
+//app => about=> profile
+,
+{
+    path: "/about",
+    Component: About,
+    children: [  //8.1
+        {
+        path:"profile",
+        Component:Profile,
+        },
+    ]
+}
+// we need to render Outlet in about to render this child
+
+//8.2 class based component
+// a js class ulitmatley
+// class className extends React.Component{
+// }   a render method is a must for a CBC
+
+// function Comp -> returns some jsx
+// class com -> renders (return) some jsx
+//similar export
+,
+class ClassName extends React.Component{
+    render(){
+        return
+            <h1> class based component</h1>
+    }
+}
+
+// for passing the props , we use this.props.propname
+// 8.3
+// states in CBC are declared in the class constructor
+//ths.state is a single whole big obj for all the states
+
+//for updatedint the state we use 
+,
+this.setState({
+    count:1,
+});
+
+//we do not mutate the state directly (nither in CBC not in FBC)
+
+
+// 8.4 constructor and state
+//this. state {} and this.setState{}
+
+//8.5 componenetDidMount()
+//React Lifecycle methods 
+//render phase -> dom update => commit phase
+//render phase works in batch render for all the component
+
+//8.6 api calls using async coponenetDidMount()
+//8.7 setstate() re render  ,, componenetDidUpdate()
+
+//8.8 componentWillUnmount() and its application
+//cleanup for setInterval()

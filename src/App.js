@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import Error from "./pages/Error";
 import Login from "./pages/Login";
 import Restaurant from "./pages/restaurant";
+import Profile from "./pages/Profile";
 
 const AppLayout = () => {
   return (
@@ -32,7 +33,7 @@ const appRouter = createBrowserRouter([
     children: [ //7.7
         {
             path : "/",
-            Component: Body,
+            Component: Login,
 
         },
         ,
@@ -43,10 +44,16 @@ const appRouter = createBrowserRouter([
         {
             path: "/about",
             Component: About,
+            children: [  //8.1
+              {
+                path:"profile",
+                Component:Profile,
+              },
+            ]
         },
         {
-            path: "/login",
-            Component: Login,
+            path: "/home",
+            Component: Body,
         },
         {
           path:"/restaurants/:id",
@@ -59,44 +66,8 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />); //7.3
 
-//ch 7
-//7.1 rules (nvr create a component inside an componet) it will be created on every render
-// useState is hook for local variables so (nvr use useState outside the functinal component)
-// (nvr use a useState inside an if(),for loop)
+// Ch 8 
+// 8.1 Childer of Childer Route
+//app => about=> profile
 
-//7.2 Importing img
-// keep all img to assests/img
-//import newName from "./path"
-//<img src={newName}>
-
-// 7.3 React Router
-// npm i react-router-dom
-//createBrowserRouter
-// RouterProvider
-
-//7.4
-// creating path and its component
-// errorelement
-//Link to
-
-// 7.5 error handling
-// useRouterError()
-// error.status, error.statusText
-
-// 7.6 Single Page Application
-// Client Side / Server Side routing
-// anchor tag href relods the page
-// so we have <Link to = ""> tag
-
-//7.7 Nested routing
-// need : about page has no header
-// we can't just import the header to each and every file
-// instead we render a root with header <outlet> footer , and we update the outlet
-// for nested routes we need outlet
-//childer component renders at outlet
-
-// 7.8 Dynamic Routing
-//7.9 restaurant menu page
-//link each card with restaurant page
-
-// 7.10 fetching details from restaurant menu api
+//8.2 Class Based Componenet
